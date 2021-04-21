@@ -1,0 +1,14 @@
+/*
+# not ignore
+!/.tmux
+!/.vim
+!/bin
+.bash_logout
+.bash_profile
+.bashrc
+.gitmodules
+.mailrc
+.msmtprc
+.tmux.conf
+.vimrc
+README.md
