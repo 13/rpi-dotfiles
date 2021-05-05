@@ -12,11 +12,11 @@ RED='\033[0;31m'
 TIME="$(date +"%H:%M:%S")"
 
 function sendMail() {
-  if [ -f $LOCKFILE ]; then
-    rm $LOCKFILE
+  if [ -f "$LOCKFILE" ]; then
+    rm "$LOCKFILE"
   fi
 
-  echo -e "Subject: $SUBJECT\n\n$BODY" | $MAILER $ADDRESS &
+  echo -e "Subject: $SUBJECT\n\n$BODY" | $MAILER "$ADDRESS" &
   sleep 1
   $MAILER_ENQUEUE &
   exit 0
@@ -36,7 +36,7 @@ function usage() {
 }
 
 # parse params
-while [[ "$#" > 0 ]]; do case $1 in
+while [[ "$#" -gt 0 ]]; do case $1 in
   -s|--subject) SUBJECT="$2";shift;shift;;
   -b|--body) BODY="$2";shift;shift;;
   -a|--address) ADDRESS="$2";shift;shift;;
@@ -49,4 +49,3 @@ if [ -z "$BODY" ]; then usage "Body message is not set."; fi;
 if [ -z "$ADDRESS" ]; then usage "Recipient address is not set."; fi;
 
 sendMail
-
