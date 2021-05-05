@@ -27,9 +27,9 @@ function usage() {
     echo -e "${RED}$1${CLEAR}\n";
   fi
   echo "Usage: $0 [-s subject] [-b body] [-a address]"
-  echo "  -a, --subject             Subject"
+  echo "  -s, --subject             Subject"
   echo "  -b, --body                Body message"
-  echo "  -s, --subject             Recipient address"
+  echo "  -a, --address             Recipient address"
   echo ""
   echo "Example: $0 --subject \"hello you\" --body \"some text.\" --address x@y.z"
   exit 1
@@ -48,4 +48,6 @@ if [ -z "$SUBJECT" ]; then usage "Subject is not set"; fi;
 if [ -z "$BODY" ]; then usage "Body message is not set."; fi;
 if [ -z "$ADDRESS" ]; then usage "Recipient address is not set."; fi;
 
-sendMail
+sendMail &
+
+exit 0
