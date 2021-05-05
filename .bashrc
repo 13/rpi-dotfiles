@@ -20,6 +20,10 @@ fi
 #export PS1='\t \u@\h \w> '
 export PS1="\[\e[32m\]\t\[\e[m\] \u@\[\e[34m\]\h\[\e[m\] \w> "
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # export
 export PATH=~/bin:$PATH
 export HISTSIZE=8000
