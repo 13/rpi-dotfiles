@@ -1,0 +1,11 @@
+[Unit]
+Description=Upmail
+After=network.target
+
+[Service]
+Type=forking
+User=%I
+ExecStart=/home/$I/bin/upmail.sh
+
+[Install]
+WantedBy=multi-user.target
