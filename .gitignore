@@ -6,6 +6,10 @@
 .bash_logout
 .bash_profile
 .bashrc
+<<<<<<< HEAD
+=======
+.gitignore
+>>>>>>> ed7d183 (change upmail)
 .gitmodules
 .mailrc
 .msmtprc
