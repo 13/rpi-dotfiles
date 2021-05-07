@@ -10,6 +10,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set pastetoggle=<F2>
 
 "base16
 "colorscheme base16-solarized-dark
